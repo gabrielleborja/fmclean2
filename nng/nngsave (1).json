@@ -250,7 +250,7 @@
     {
       "lean": "lemma iff_trans (P Q R : Prop) : (P ↔ Q) → (Q ↔ R) → (P ↔ R) :=\n",
       "isSolved": true,
-      "editorText": "intros hpq hqr,\r\ncases hpq with pq qp,\r\ncases hqr with qr rq,\r\nsplit,\r\nintro p,\r\nhave q := pq(p),\r\nhave r := qr(q),\r\nexact r,\r\n\r\nintro r,\r\nhave q := rq(r),\r\nhave p := qp(q),\r\nexact p,\r\n"
+      "editorText": "intro h,\r\ncases h with pq qp,\r\nintro x,\r\ncases x with qr rq,\r\nsplit,\r\nintro p,\r\nhave q : Q := pq(p),\r\nhave r : R := qr(q),\r\nexact r,\r\n\r\nintro r,\r\nhave q : Q := rq(r),\r\nhave p : P := qp(q),\r\nexact p,"
     },
     {
       "lean": "example (P Q : Prop) : Q → (P ∨ Q) :=\n",
@@ -279,7 +279,8 @@
     },
     {
       "lean": "theorem succ_inj' {a b : mynat} (hs : succ(a) = succ(b)) :  a = b := \n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "apply succ_inj,\r\nrw hs,\r\nrefl,"
     },
     {
       "lean": "theorem succ_succ_inj {a b : mynat} (h : succ(succ(a)) = succ(succ(b))) :  a = b := \n",
