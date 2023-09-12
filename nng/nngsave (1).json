@@ -294,7 +294,8 @@
     },
     {
       "lean": "theorem succ_eq_succ_iff (a b : mynat) : succ a = succ b ↔ a = b :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "split,\r\nintro h,\r\napply succ_inj,\r\nexact h,\r\nintro g,\r\nrw succ_eq_add_one,\r\nrw succ_eq_add_one,\r\nrw g,\r\nrefl,\r\n"
     },
     {
       "lean": "theorem add_right_cancel (a t b : mynat) : a + t = b + t → a = b :=\n",
